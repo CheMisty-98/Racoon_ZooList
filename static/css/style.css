@@ -1,0 +1,1081 @@
+/* === БАЗОВЫЕ СТИЛИ === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* === WELCOME СТРАНИЦА === */
+#welcome-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+#welcome-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.welcome-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#welcome-page button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+    margin: 0 0.5rem;
+}
+
+#welcome-page button:hover {
+    background: #45a049;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* === ОСНОВНОЕ ПРИЛОЖЕНИЕ === */
+#main-app {
+    min-height: 100vh;
+    background: white;
+}
+
+#main-app h1 {
+    text-align: center;
+    padding: 1.5rem;
+    background: #2c3e50;
+    color: white;
+    margin-bottom: 0;
+}
+
+/* === НАВИГАЦИЯ === */
+.menu-container {
+    background: #34495e;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: block;
+    background: #2c3e50;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.nav-link:hover {
+    background: #4a6572;
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    background: #e74c3c;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* === КОНТЕЙНЕР ПИТОМЦЕВ === */
+.pets-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.no-pets {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 3rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+/* === КАРТОЧКИ ПИТОМЦЕВ === */
+.pet-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e1e1e1;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.pet-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.pet-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.pet-card p {
+    margin-bottom: 0.5rem;
+    color: #555;
+    flex-grow: 1;
+}
+
+/* === БЕЙДЖИ === */
+.badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 0.2rem;
+}
+
+.badge.ideal {
+    background: #ffeb3b;
+    color: #333;
+}
+
+.badge.mutant {
+    background: #9c27b0;
+    color: white;
+}
+
+/* === КНОПКИ ДЕЙСТВИЙ === */
+.pet-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pet-actions button {
+    padding: 0.7rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-details {
+    background: #3498db;
+    color: white;
+}
+
+.btn-details:hover {
+    background: #2980b9;
+}
+
+.btn-edit {
+    background: #f39c12;
+    color: white;
+}
+
+.btn-edit:hover {
+    background: #e67e22;
+}
+
+.btn-delete {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #c0392b;
+}
+
+.btn-book {
+    background: #27ae60;
+    color: white;
+}
+
+.btn-book:hover {
+    background: #219a52;
+}
+
+/* Стили для секций контента */
+#main-content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.section-header h2 {
+    color: #2c3e50;
+    margin: 0;
+}
+
+.btn-add-pet {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-add-pet:hover {
+    background: #219a52;
+    transform: translateY(-2px);
+}
+
+.btn-cancel-booking {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-cancel-booking:hover {
+    background: #c0392b;
+}
+
+.pet-details {
+    max-width: 500px;
+}
+
+.details-info {
+    margin: 20px 0;
+}
+
+.details-info p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.pet-stats ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pet-stats li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.queue-section {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.queue-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    flex-shrink: 0;
+    min-width: 120px;
+}
+
+.queue-list {
+    margin-top: 10px;
+}
+
+.queue-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin: 8px 0;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    gap: 12px;
+    flex-wrap: nowrap;
+    min-height: 60px;
+}
+
+.queue-item.current {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-left-color: #48bb78;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.queue-position {
+    font-weight: bold;
+    font-size: 1.1em;
+    min-width: 25px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.queue-user {
+    flex: 1;
+    font-weight: 500;
+    font-size: 1em;
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.current-badge {
+    background: #48bb78;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.queue-item.current .current-badge {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-evenly;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+.error {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #d32f2f;
+}
+
+/* === УЛУЧШЕННЫЕ СТИЛИ ДЛЯ ОЧЕРЕДИ === */
+.queue-management {
+    max-width: 100%;
+}
+
+.queue-management-list {
+    margin: 1.5rem 0;
+}
+
+.management-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.management-item:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.management-item.selected {
+    background-color: #e3f2fd;
+    border-color: #2196f3;
+    box-shadow: 0 2px 12px rgba(33, 150, 243, 0.2);
+}
+
+.management-item.current {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: #667eea;
+}
+
+.management-item.current:hover {
+    background: linear-gradient(135deg, #5a6fd8, #6a42a0);
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.item-position {
+    font-weight: bold;
+    min-width: 25px;
+    font-size: 1.1em;
+}
+
+.item-user {
+    font-weight: 500;
+    min-width: 120px;
+    font-size: 1em;
+}
+
+.item-time {
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.management-item.current .item-time {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-up, .btn-down {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    min-width: 40px;
+}
+
+.btn-up:disabled, .btn-down:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-up:hover:not(:disabled), .btn-down:hover:not(:disabled) {
+    background: #5a6fd8;
+    transform: scale(1.05);
+}
+
+.wait-time {
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.queue-item .wait-time {
+    margin-left: auto;
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+.queue-item.current .wait-time {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.empty-queue {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-style: italic;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px dashed #ddd;
+}
+
+.queue-management h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 768px) {
+    #welcome-page h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        text-align: center;
+    }
+
+    .pets-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .pet-card {
+        padding: 1rem;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons button {
+        width: 100%;
+    }
+
+    .management-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .item-info {
+        justify-content: space-between;
+    }
+
+    .item-actions {
+        justify-content: center;
+    }
+
+    .item-user {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .pets-container {
+        padding: 0.5rem;
+    }
+
+    .pet-card {
+        margin: 0.5rem;
+    }
+
+    #main-content {
+        padding: 1rem;
+    }
+}
+
+/* === АДАПТИВНОСТЬ ДЛЯ 425px === */
+@media (max-width: 425px) {
+    #welcome-page h1 {
+        font-size: 1.8rem;
+    }
+
+    .welcome-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #welcome-page button {
+        min-width: 130px;
+        padding: 0.75rem 1.2rem;
+    }
+
+    #main-app h1 {
+        font-size: 1.4rem;
+        padding: 1.2rem;
+    }
+
+    .menu {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .pets-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.2rem;
+        padding: 1.5rem;
+    }
+
+    .pet-card {
+        padding: 1.2rem;
+    }
+
+    .pet-card img {
+        height: 180px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .btn-add-pet {
+        width: auto;
+        min-width: 200px;
+    }
+
+    .management-item {
+        padding: 1rem;
+    }
+
+    .item-info {
+        gap: 1rem;
+    }
+
+    .item-user {
+        min-width: 100px;
+    }
+
+    .queue-item {
+        padding: 10px 12px;
+        gap: 10px;
+        min-height: 55px;
+    }
+
+    .queue-position {
+        font-size: 1em;
+        min-width: 22px;
+    }
+
+    .queue-user {
+        font-size: 0.95em;
+        min-width: 70px;
+    }
+
+    .queue-status {
+        min-width: 110px;
+    }
+
+    .current-badge {
+        font-size: 0.75em;
+        padding: 2px 8px;
+    }
+
+    .ready-status {
+        font-size: 0.8em;
+    }
+}
+
+/* === АДАПТИВНОСТЬ ДЛЯ 375px === */
+@media (max-width: 375px) {
+    #welcome-page h1 {
+        font-size: 1.6rem;
+        margin-bottom: 1.8rem;
+    }
+
+    #welcome-page button {
+        min-width: 140px;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    #main-app h1 {
+        font-size: 1.3rem;
+        padding: 1rem;
+    }
+
+    .menu-container {
+        padding: 0.8rem;
+    }
+
+    .menu {
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        padding: 0.65rem 0.8rem;
+        font-size: 0.85rem;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .pets-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .pet-card {
+        padding: 1rem;
+    }
+
+    .pet-card img {
+        height: 170px;
+    }
+
+    .pet-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .pet-actions button {
+        padding: 0.7rem;
+        font-size: 0.85rem;
+    }
+
+    #main-content {
+        padding: 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .btn-add-pet {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .management-item {
+        padding: 0.9rem;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .item-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .item-position {
+        min-width: 22px;
+    }
+
+    .item-user {
+        min-width: auto;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .item-time {
+        font-size: 0.8rem;
+    }
+
+    .item-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-up, .btn-down {
+        padding: 0.6rem 0.9rem;
+        font-size: 0.8rem;
+    }
+
+    .queue-item {
+        padding: 0.8rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .action-buttons button {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+
+    .queue-item {
+        padding: 8px 10px;
+        gap: 8px;
+        min-height: 50px;
+        flex-wrap: wrap;
+    }
+
+    .queue-user {
+        min-width: 60px;
+        font-size: 0.9em;
+    }
+
+    .queue-status {
+        min-width: 100px;
+        align-items: flex-start;
+        flex-basis: 100%;
+        margin-top: 5px;
+        padding-left: 33px; /* выравнивание под позицией и пользователем */
+    }
+
+    .current-badge {
+        font-size: 0.7em;
+    }
+}
+
+/* === АДАПТИВНОСТЬ ДЛЯ 360px === */
+@media (max-width: 360px) {
+    #welcome-page {
+        padding: 1rem;
+    }
+
+    #welcome-page h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .welcome-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    #welcome-page button {
+        width: 100%;
+        margin: 0.3rem 0;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    #main-app h1 {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+
+    .menu-container {
+        padding: 0.5rem;
+    }
+
+    .menu {
+        gap: 0.3rem;
+    }
+
+    .nav-link {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .pets-container {
+        padding: 0.5rem;
+        gap: 0.8rem;
+    }
+
+    .pet-card {
+        padding: 0.8rem;
+    }
+
+    .pet-card img {
+        height: 160px;
+    }
+
+    .pet-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .pet-card p {
+        font-size: 0.85rem;
+    }
+
+    .pet-actions button {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    #main-content {
+        padding: 0.8rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .btn-add-pet {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .management-item {
+        padding: 0.8rem;
+        gap: 0.6rem;
+    }
+
+    .item-position {
+        min-width: 20px;
+        font-size: 0.9rem;
+    }
+
+    .item-user {
+        font-size: 0.85rem;
+    }
+
+    .item-time {
+        font-size: 0.75rem;
+    }
+
+    .btn-up, .btn-down {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .queue-item {
+        padding: 6px 8px;
+        gap: 6px;
+    }
+
+    .queue-position {
+        min-width: 20px;
+        font-size: 0.9em;
+    }
+
+    .queue-user {
+        min-width: 50px;
+        font-size: 0.85em;
+    }
+
+    .queue-status {
+        min-width: 90px;
+        padding-left: 26px;
+        font-size: 0.8em;
+    }
+
+    .ready-status {
+        font-size: 0.75em;
+    }
+}
+
+/* === АДАПТИВНОСТЬ ДЛЯ 320px === */
+@media (max-width: 320px) {
+    .pets-container {
+        padding: 0.3rem;
+    }
+
+    .pet-card {
+        padding: 0.6rem;
+        margin: 0.2rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .pet-card img {
+        height: 150px;
+    }
+
+    .pet-card h3 {
+        font-size: 1rem;
+    }
+
+    .pet-card p {
+        font-size: 0.8rem;
+    }
+
+    .badge {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.4rem;
+    }
+
+    .modal-content {
+        padding: 0.8rem;
+        margin: 0.2rem;
+    }
+
+    .management-item {
+        padding: 0.7rem;
+    }
+
+    .item-user {
+        font-size: 0.8rem;
+    }
+
+    .queue-item {
+        padding: 5px 6px;
+    }
+
+    .queue-status {
+        padding-left: 20px;
+        min-width: 80px;
+    }
+
+    .current-badge {
+        font-size: 0.65em;
+        padding: 1px 6px;
+    }
+}
